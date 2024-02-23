@@ -5,11 +5,16 @@ import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 public class DatabaseConnection {
 
+    private static final Logger logger = Logger.getLogger(DatabaseConnection.class.getName());
+    
     private static Connection getConnection() throws URISyntaxException, SQLException {
         Connection connection = null;
+        
+
         try {
 
             // Retrieve username, password, host, port and database name from URI
@@ -20,19 +25,17 @@ public class DatabaseConnection {
             String password = jdbUri.getUserInfo().split(":")[1];
             String port = String.valueOf(jdbUri.getPort());
 
-            System.out.println("Before connection");
-
             // Create the jdbc url
             String jdbUrl = "jdbc:mysql://" + jdbUri.getHost() + ":" + port + jdbUri.getPath();
 
             // Establish a connection
             connection =  DriverManager.getConnection(jdbUrl, username, password);
 
-            if(connection.isValid(0)) {
+            logger.info("Database connection established successfully.");
 
-                System.out.println("connection established");
-            }
-        
+        } catch (SQLException e) {
+            logger.severe("Error connecting to database: " + e.getMessage());
+            throw e;
         } finally {
 
             // Ensure the connection is closed even if an exception occurs

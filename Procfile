@@ -1,1 +1,1 @@
-web: java -jar TaskmanagementapplicationApplication.jar
+web: java -jar taskmanagementapplication-0.0.1-SNAPSHOT.jar

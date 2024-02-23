@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.taskmanagementapplication.taskmanagement.repository.TaskRepositoryIntegrationTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.551 s -- in com.taskmanagementapplication.taskmanagement.repository.TaskRepositoryIntegrationTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.529 s -- in com.taskmanagementapplication.taskmanagement.repository.TaskRepositoryIntegrationTest

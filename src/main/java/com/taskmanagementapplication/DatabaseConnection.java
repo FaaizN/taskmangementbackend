@@ -13,8 +13,7 @@ public class DatabaseConnection {
     
     private static Connection getConnection() throws URISyntaxException, SQLException {
         Connection connection = null;
-        
-
+    
         try {
 
             // Retrieve username, password, host, port and database name from URI

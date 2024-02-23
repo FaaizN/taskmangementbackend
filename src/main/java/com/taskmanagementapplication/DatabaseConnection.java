@@ -20,11 +20,18 @@ public class DatabaseConnection {
             String password = jdbUri.getUserInfo().split(":")[1];
             String port = String.valueOf(jdbUri.getPort());
 
+            System.out.println("Before connection");
+
             // Create the jdbc url
             String jdbUrl = "jdbc:mysql://" + jdbUri.getHost() + ":" + port + jdbUri.getPath();
 
             // Establish a connection
             connection =  DriverManager.getConnection(jdbUrl, username, password);
+
+            if(connection.isValid(0)) {
+
+                System.out.println("connection established");
+            }
         
         } finally {
 

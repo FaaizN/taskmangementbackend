@@ -1,1 +1,1 @@
-web: java -jar target/taskmanagementapplication-0.0.1-SNAPSHOT.jar
+web: java -DServer.port=8080 -jar target/taskmanagementapplication-0.0.1-SNAPSHOT.jar

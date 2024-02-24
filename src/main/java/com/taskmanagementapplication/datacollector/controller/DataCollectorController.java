@@ -5,7 +5,6 @@ import com.taskmanagementapplication.taskmanagement.model.User;
 import com.taskmanagementapplication.datacollector.service.DataCollectorService;
 import com.taskmanagementapplication.taskmanagement.service.TaskService;
 import com.taskmanagementapplication.taskmanagement.service.UserService;
-import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

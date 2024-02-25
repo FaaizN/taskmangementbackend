@@ -20,9 +20,9 @@ public class DataAnalyzerController {
         this.dataAnalyzerService = dataAnalyzerService;
     }
 
-    @GetMapping("/analyze/{userID}")
-    public ResponseEntity<Double> analyzeTaskData(@PathVariable int userID) {
-        double completionPercentage = dataAnalyzerService.analyzeTaskData(userID);
+    @GetMapping("/analyze/{userName}")
+    public ResponseEntity<Double> analyzeTaskData(@PathVariable String userName) {
+        double completionPercentage = dataAnalyzerService.analyzeTaskData(userName);
         return new ResponseEntity<>(completionPercentage, HttpStatus.OK);
     }
 

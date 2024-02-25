@@ -33,7 +33,7 @@ public class DataAnalyzerServiceTest {
 
     @Test
     public void testAnalyzeTaskData() {
-        int userID = 123;
+        String userName = "john doe";
 
         List<Task> completedTasks = new ArrayList<>();
 
@@ -46,32 +46,32 @@ public class DataAnalyzerServiceTest {
         totalTasks.add(new Task());
 
         when(taskRepository.findUserCompleted(true)).thenReturn(completedTasks);
-        when(taskRepository.findUserID(userID)).thenReturn(totalTasks);
+        when(taskRepository.findByUser(any())).thenReturn(totalTasks);
 
-        double completionPercentage = dataAnalyzerService.analyzeTaskData(userID);
+        double completionPercentage = dataAnalyzerService.analyzeTaskData(userName);
 
         assertEquals(66.67, completionPercentage, 0.01);
     }
 
     @Test
     public void testAnalyzeTaskData_ZeroTotalTasks() {
-        int userID = 123;
+        String userName = "john doe";
         List<Task> completedTasks = new ArrayList<>();
         completedTasks.add(new Task());
 
         List<Task> totalTasks = new ArrayList<>();
 
         when(taskRepository.findUserCompleted(true)).thenReturn(completedTasks);
-        when(taskRepository.findUserID(userID)).thenReturn(totalTasks);
+        when(taskRepository.findByUser(any())).thenReturn(totalTasks);
 
-        double completionPercentage = dataAnalyzerService.analyzeTaskData(userID);
+        double completionPercentage = dataAnalyzerService.analyzeTaskData(userName);
 
         assertEquals(0.0, completionPercentage);
     }
 
     @Test
     public void testAnalyzeTaskData_ZeroCompletionPercentage() {
-        int userID = 123;
+        String userName = "John Doe";
         List<Task> completedTasks = new ArrayList<>();
 
         List<Task> totalTasks = new ArrayList<>();
@@ -80,9 +80,9 @@ public class DataAnalyzerServiceTest {
         totalTasks.add(new Task());
 
         when(taskRepository.findUserCompleted(true)).thenReturn(completedTasks);
-        when(taskRepository.findUserID(userID)).thenReturn(totalTasks);
+        when(taskRepository.findByUser(any())).thenReturn(totalTasks);
 
-        double completionPercentage = dataAnalyzerService.analyzeTaskData(userID);
+        double completionPercentage = dataAnalyzerService.analyzeTaskData(userName);
 
         assertEquals(0.0, completionPercentage);
     }

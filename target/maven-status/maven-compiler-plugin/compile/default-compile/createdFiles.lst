@@ -9,6 +9,7 @@ com\taskmanagementapplication\datacollector\service\DataCollectorServiceImplemen
 com\taskmanagementapplication\taskmanagement\repository\TaskRepository.class
 com\taskmanagementapplication\configuration\CorsConfig.class
 com\taskmanagementapplication\dataanalyzer\controller\DataAnalyzerController.class
+com\taskmanagementapplication\DatabaseConnection.class
 com\taskmanagementapplication\taskmanagement\service\TaskService.class
 com\taskmanagementapplication\taskmanagement\service\UserServiceImplementation.class
 com\taskmanagementapplication\taskmanagement\model\Task.class
